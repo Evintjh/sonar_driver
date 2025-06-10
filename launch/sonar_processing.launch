@@ -1,0 +1,10 @@
+<launch>
+    <!-- Argument to specify the sonar's IP address -->
+    <arg name="ip" default="192.168.1.31" />
+
+    <!-- Sonar node -->
+    <node name="sonar_node" pkg="FD_sonar_driver" type="sonar_processor" output="screen">
+        <!-- Set manual_ip parameter in the node's private namespace -->
+        <param name="manual_ip" value="$(arg ip)"/>
+    </node>
+</launch>
